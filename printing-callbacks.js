@@ -11,7 +11,6 @@ var requestOptions = {
 };
 
 
-
 function getHTML (options, callback) {
 
   var text = ''
@@ -29,11 +28,8 @@ function printHTML (html) {
   console.log(html);
 }
 
-function printHTMLUppercase (html) {
-  console.log(html.toUpperCase());
-}
 // console.log(options)
 getHTML(requestOptions, printHTML);
-getHTML(requestOptions, printHTMLUppercase)
+
 
 
