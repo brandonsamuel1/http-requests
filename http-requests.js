@@ -7,7 +7,6 @@ var options = {
 
 function getAndPrintHTMLChunks (requestOptions) {
 
-
   var text = '';
   https.get(requestOptions, function(response) {
     response.setEncoding('utf-8');
@@ -15,8 +14,6 @@ function getAndPrintHTMLChunks (requestOptions) {
       text += data
       console.log(text)
     })
-
   })
-
 }
 getAndPrintHTMLChunks(options)
