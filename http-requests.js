@@ -1,17 +1,22 @@
 var https = require("https");
 
-
-function getAndPrintHTMLChunks () {
-
-  var requestOptions = {
+var options = {
     host: 'sytantris.github.io',
     path: '/http-examples/step1.html'
-  };
+};
 
-https.get(requestOptions, function(response) {
-response.on('data', function(data) {
-  console.log('Chunk recieved. Length: ', data.length)
-})
-})
+function getAndPrintHTMLChunks (requestOptions) {
+
+
+  var text = '';
+  https.get(requestOptions, function(response) {
+    response.setEncoding('utf-8');
+    response.on('data', function(data) {
+      text += data
+      console.log(text)
+    })
+
+  })
 
 }
+getAndPrintHTMLChunks(options)
